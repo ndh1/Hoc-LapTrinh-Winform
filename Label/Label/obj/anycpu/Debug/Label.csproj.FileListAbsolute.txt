@@ -1,0 +1,6 @@
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/bin/Debug/Label.exe
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/bin/Debug/Label.pdb
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/obj/anycpu/Debug/Label.csproj.AssemblyReference.cache
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/obj/anycpu/Debug/Label.csproj.CoreCompileInputs.cache
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/obj/anycpu/Debug/Label.exe
+/Users/nguyendinhhuong/Desktop/Hoc Winform/Hoc-LapTrinh-Winform/Label/Label/obj/anycpu/Debug/Label.pdb
