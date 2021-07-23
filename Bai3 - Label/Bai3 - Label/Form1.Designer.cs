@@ -40,6 +40,7 @@
             this.label1.Size = new System.Drawing.Size(139, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dinh Huong";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -49,6 +50,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

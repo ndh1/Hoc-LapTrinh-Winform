@@ -16,5 +16,15 @@ namespace Bai3___Label
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Nguyen Dinh Huong";
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Huong";
+        }
     }
 }
