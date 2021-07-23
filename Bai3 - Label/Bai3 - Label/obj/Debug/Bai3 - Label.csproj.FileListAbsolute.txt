@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\bin\Debug\Bai3 - Label.exe.config
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\bin\Debug\Bai3 - Label.exe
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\bin\Debug\Bai3 - Label.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3 - Label.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3___Label.Properties.Resources.resources
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3 - Label.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3 - Label.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3 - Label.exe
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3 - Label.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\Bai3 - Label\Bai3 - Label\obj\Debug\Bai3___Label.Form1.resources
