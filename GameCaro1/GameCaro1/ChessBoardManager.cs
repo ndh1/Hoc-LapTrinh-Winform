@@ -13,12 +13,32 @@ namespace GameCaro1
         #region Properties
         private Panel chessBoard;
         public Panel ChessBoard { get => chessBoard; set => chessBoard = value; }
+        public List<Player> Player { get => player; set => player = value; }
+        public int CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
+        public TextBox PlayerName { get => playerName; set => playerName = value; }
+        public PictureBox PlayerMark { get => playerMark; set => playerMark = value; }
 
+        private List<Player> player;
+        private int currentPlayer;
+
+        private TextBox playerName;
+        private PictureBox playerMark;
         #endregion
 
         #region Initialize 
-        public ChessBoardManager(Panel chessBoard) {
+        public ChessBoardManager(Panel chessBoard, TextBox playerName, PictureBox mark) {
+           
             this.ChessBoard = chessBoard;
+            this.PlayerName = playerName;
+            this.PlayerMark = mark;
+
+            this.Player = new List<Player>()
+            {
+                new Player("P1", Image.FromFile(Application.StartupPath + "\\Resources\\P1.png")),
+                new Player("P2", Image.FromFile(Application.StartupPath + "\\Resources\\P2.png"))
+        };
+            CurrentPlayer = 0;
+            ChangePlayer();
         }
         #endregion
         public void DrawChessBoard()
@@ -32,8 +52,10 @@ namespace GameCaro1
                     {
                         Width = Cons.CHESS_WIDTH,
                         Height = Cons.CHESS_HEIGHT,
-                        Location = new Point(oldButton.Location.X + oldButton.Width, oldButton.Location.Y)
+                        Location = new Point(oldButton.Location.X + oldButton.Width, oldButton.Location.Y),
+                        BackgroundImageLayout = ImageLayout.Stretch
                     };
+                    btn.Click += Btn_Click;
                     ChessBoard.Controls.Add(btn);
                     oldButton = btn;
                 }
@@ -43,6 +65,27 @@ namespace GameCaro1
             }
 
 
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn.BackgroundImage != null)
+            {
+                return;
+            }
+            Mark(btn);
+            ChangePlayer();
+            
+        }
+
+        private void Mark(Button btn) {
+            btn.BackgroundImage = Player[CurrentPlayer].Mark;
+            CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
+        }
+        private void ChangePlayer() {
+            PlayerName.Text = Player[CurrentPlayer].Name;
+            PlayerMark.Image = Player[CurrentPlayer].Mark;
         }
     }
 }

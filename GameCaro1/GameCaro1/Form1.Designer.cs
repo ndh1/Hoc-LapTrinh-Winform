@@ -50,7 +50,7 @@
             this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.Location = new System.Drawing.Point(12, 12);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(630, 657);
+            this.pnlChessBoard.Size = new System.Drawing.Size(690, 657);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // panel2
@@ -118,10 +118,12 @@
             // 
             // ptcbMark
             // 
-            this.ptcbMark.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ptcbMark.BackColor = System.Drawing.SystemColors.Control;
+            this.ptcbMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptcbMark.Location = new System.Drawing.Point(213, 17);
             this.ptcbMark.Name = "ptcbMark";
             this.ptcbMark.Size = new System.Drawing.Size(131, 127);
+            this.ptcbMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptcbMark.TabIndex = 2;
             this.ptcbMark.TabStop = false;
             // 

@@ -8,3 +8,13 @@ C:\Users\admin\source\repos\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.Gener
 C:\Users\admin\source\repos\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\GameCaro1\GameCaro1\obj\Debug\GameCaro1.exe
 C:\Users\admin\source\repos\GameCaro1\GameCaro1\obj\Debug\GameCaro1.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\GameCaro1.exe.config
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\GameCaro1.exe
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\GameCaro1.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.Form1.resources
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.Properties.Resources.resources
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.exe
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.pdb
