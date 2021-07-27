@@ -18,3 +18,10 @@ C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCa
 C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.exe
 C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.Core.dll
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.S3.dll
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.Core.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.Core.xml
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.S3.pdb
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\bin\Debug\AWSSDK.S3.xml
+C:\Users\admin\Desktop\Hoc-LapTrinh-Winform\GameCaro1\GameCaro1\obj\Debug\GameCaro1.csproj.CopyComplete
