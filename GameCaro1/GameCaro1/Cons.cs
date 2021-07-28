@@ -13,5 +13,10 @@ namespace GameCaro1
 
         public static int CHESS_BOARD_WIDTH = 25;
         public static int CHESS_BOARD_HEIGHT = 25;
+
+        public static int COUNT_DOWN_STEP = 100;
+        public static int COUNT_DOWN_TIME = 10000;
+        public static int COUNT_DOWN_INTERVAL = 100;
+
     }
 }
