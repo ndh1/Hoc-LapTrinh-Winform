@@ -25,10 +25,10 @@ namespace GameCaro1
             prcbCountdown.Step = Cons.COUNT_DOWN_STEP;
             prcbCountdown.Maximum = Cons.COUNT_DOWN_TIME;
             prcbCountdown.Value = 0;
+            tmCountDown.Interval = Cons.COUNT_DOWN_INTERVAL ;
+            NewGame();
 
-            ChessBoard.DrawChessBoard();
-
-            tmCountDown.Start();
+            
         }
         void EndGame()
         {
@@ -36,6 +36,22 @@ namespace GameCaro1
             pnlChessBoard.Enabled = false;
             tmCountDown.Stop();
 
+        }
+        void NewGame()
+        {
+            prcbCountdown.Value = 0;
+            tmCountDown.Stop();
+            ChessBoard.DrawChessBoard();
+           
+        }
+        void Undo() 
+        {
+        
+        }
+        void Quit() 
+        {
+           Application.Exit();
+        
         }
 
         private void ChessBoard_EndedGame(object sender, EventArgs e)
@@ -58,9 +74,32 @@ namespace GameCaro1
 
             if (prcbCountdown.Value >= prcbCountdown.Maximum) 
             {
-                
+                tmCountDown.Stop();
                 EndGame();
+
             }
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChessBoard.DrawChessBoard();
+            NewGame();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Quit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn thoát", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+                e.Cancel = true;
         }
     }
 }

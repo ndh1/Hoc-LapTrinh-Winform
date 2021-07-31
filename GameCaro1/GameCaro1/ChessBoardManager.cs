@@ -98,9 +98,7 @@ namespace GameCaro1
                 new Player("Education", Image.FromFile(Application.StartupPath + "\\Resources\\P2.png"))
             };
 
-            CurrentPlayer = 0;
-
-            ChangePlayer();
+            
         }
         #endregion
 
@@ -108,6 +106,10 @@ namespace GameCaro1
         public void DrawChessBoard()
         {
             ChessBoard.Enabled = true;
+            ChessBoard.Controls.Clear();
+            CurrentPlayer = 0;
+
+            ChangePlayer();
             Matrix = new List<List<Button>>();
 
             Button oldButton = new Button() { Width = 0, Location = new Point(0, 0) };
