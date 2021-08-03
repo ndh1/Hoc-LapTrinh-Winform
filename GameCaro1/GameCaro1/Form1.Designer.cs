@@ -36,7 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLan = new System.Windows.Forms.Button();
-            this.txtIP = new System.Windows.Forms.TextBox();
+            this.txbIP = new System.Windows.Forms.TextBox();
             this.ptcbMark = new System.Windows.Forms.PictureBox();
             this.prcbCountdown = new System.Windows.Forms.ProgressBar();
             this.txtPlayerName = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnLan);
-            this.panel3.Controls.Add(this.txtIP);
+            this.panel3.Controls.Add(this.txbIP);
             this.panel3.Controls.Add(this.ptcbMark);
             this.panel3.Controls.Add(this.prcbCountdown);
             this.panel3.Controls.Add(this.txtPlayerName);
@@ -116,13 +116,14 @@
             this.btnLan.TabIndex = 4;
             this.btnLan.Text = "Connect";
             this.btnLan.UseVisualStyleBackColor = true;
+            this.btnLan.Click += new System.EventHandler(this.btnLan_Click);
             // 
-            // txtIP
+            // txbIP
             // 
-            this.txtIP.Location = new System.Drawing.Point(4, 95);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(187, 20);
-            this.txtIP.TabIndex = 3;
+            this.txbIP.Location = new System.Drawing.Point(4, 95);
+            this.txbIP.Name = "txbIP";
+            this.txbIP.Size = new System.Drawing.Size(187, 20);
+            this.txbIP.TabIndex = 3;
             // 
             // ptcbMark
             // 
@@ -178,14 +179,14 @@
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -193,7 +194,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -230,7 +231,7 @@
         private System.Windows.Forms.PictureBox pctAvatar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnLan;
-        private System.Windows.Forms.TextBox txtIP;
+        private System.Windows.Forms.TextBox txbIP;
         private System.Windows.Forms.PictureBox ptcbMark;
         private System.Windows.Forms.ProgressBar prcbCountdown;
         private System.Windows.Forms.TextBox txtPlayerName;

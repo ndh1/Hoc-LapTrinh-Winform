@@ -59,6 +59,12 @@ namespace GameCaro1
             get { return matrix; }
             set { matrix = value; }
         }
+
+        internal Stack<PlayInfo> PlayTimeLine { get => playTimeLine; set => playTimeLine = value; }
+
+        private Stack<PlayInfo> playTimeLine;
+        
+
         private event EventHandler playerMarked;
         public event EventHandler PlayerMarked {
 
@@ -83,6 +89,8 @@ namespace GameCaro1
                 endedGame -= value;
             }
         }
+
+        
         #endregion
 
         #region Initialize
@@ -98,7 +106,7 @@ namespace GameCaro1
                 new Player("Education", Image.FromFile(Application.StartupPath + "\\Resources\\P2.png"))
             };
 
-            
+            PlayTimeLine = new Stack<PlayInfo>();
         }
         #endregion
 
@@ -151,6 +159,10 @@ namespace GameCaro1
 
             Mark(btn);
 
+            PlayTimeLine.Push(new PlayInfo(GetChessPoint(btn),CurrentPlayer));
+
+            CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
+
             ChangePlayer();
 
             if (playerMarked != null)
@@ -169,6 +181,31 @@ namespace GameCaro1
         {
             if (endedGame != null)
                 endedGame(this, new EventArgs());
+        }
+
+        public bool Undo()
+        {
+            if (PlayTimeLine.Count <= 0)
+                return false;
+
+            PlayInfo oldPoint = PlayTimeLine.Pop();
+            Button btn = Matrix[oldPoint.Point.Y][oldPoint.Point.X];
+
+            btn.BackgroundImage = null;
+
+            if (PlayTimeLine.Count <= 0)
+            {
+                CurrentPlayer = 0;
+            }
+            else
+            {
+                oldPoint = PlayTimeLine.Peek();
+                CurrentPlayer = oldPoint.CurrentPlayer == 1 ? 0 : 1;
+            }
+
+            ChangePlayer();
+
+            return true;
         }
 
         private bool isEndGame(Button btn)
@@ -315,7 +352,7 @@ namespace GameCaro1
         {
             btn.BackgroundImage = Player[CurrentPlayer].Mark;
 
-            CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
+          
         }
 
         private void ChangePlayer()

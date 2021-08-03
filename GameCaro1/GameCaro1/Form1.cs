@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace GameCaro1
     {
         #region Properties
         ChessBoardManager ChessBoard;
+        SocketManager socket;
         #endregion
         public Form1()
         {
@@ -26,14 +28,17 @@ namespace GameCaro1
             prcbCountdown.Maximum = Cons.COUNT_DOWN_TIME;
             prcbCountdown.Value = 0;
             tmCountDown.Interval = Cons.COUNT_DOWN_INTERVAL ;
-            NewGame();
 
+            socket = new SocketManager();
+            NewGame();
+            
             
         }
         void EndGame()
         {
             MessageBox.Show("Ket thuc");
             pnlChessBoard.Enabled = false;
+            undoToolStripMenuItem.Enabled = false;
             tmCountDown.Stop();
 
         }
@@ -41,12 +46,13 @@ namespace GameCaro1
         {
             prcbCountdown.Value = 0;
             tmCountDown.Stop();
+            undoToolStripMenuItem.Enabled = true;
             ChessBoard.DrawChessBoard();
            
         }
         void Undo() 
         {
-        
+            ChessBoard.Undo();
         }
         void Quit() 
         {
@@ -88,7 +94,7 @@ namespace GameCaro1
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Undo();
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,6 +106,53 @@ namespace GameCaro1
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
+        }
+
+        private void btnLan_Click(object sender, EventArgs e)
+        {
+            socket.IP = txbIP.Text;
+
+            if (!socket.ConnectServer())
+            {
+                socket.CreateServer();
+
+                Thread listenThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(500);
+                        try
+                        {
+                            Listen();
+                            break;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+            }
+            else
+            {
+                Thread listenThread = new Thread(() =>
+                {
+                    Listen();
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+
+                socket.Send("Thông tin từ Client");
+            }
+
+        }
+        void Listen()
+        {
+            string data = (string)socket.Receive();
+
+            MessageBox.Show(data);
         }
     }
 }
