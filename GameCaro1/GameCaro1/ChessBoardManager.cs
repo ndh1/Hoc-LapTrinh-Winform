@@ -60,18 +60,15 @@ namespace GameCaro1
             set { matrix = value; }
         }
 
-        internal Stack<PlayInfo> PlayTimeLine { get => playTimeLine; set => playTimeLine = value; }
-
-        private Stack<PlayInfo> playTimeLine;
-        
-
-        private event EventHandler playerMarked;
-        public event EventHandler PlayerMarked {
-
-            add {
+        private event EventHandler<ButtonClickEvent> playerMarked;
+        public event EventHandler<ButtonClickEvent> PlayerMarked
+        {
+            add
+            {
                 playerMarked += value;
             }
-            remove {
+            remove
+            {
                 playerMarked -= value;
             }
         }
@@ -79,7 +76,6 @@ namespace GameCaro1
         private event EventHandler endedGame;
         public event EventHandler EndedGame
         {
-
             add
             {
                 endedGame += value;
@@ -90,7 +86,13 @@ namespace GameCaro1
             }
         }
 
-        
+        private Stack<PlayInfo> playTimeLine;
+
+        public Stack<PlayInfo> PlayTimeLine
+        {
+            get { return playTimeLine; }
+            set { playTimeLine = value; }
+        }
         #endregion
 
         #region Initialize
@@ -102,11 +104,10 @@ namespace GameCaro1
 
             this.Player = new List<Player>()
             {
-                new Player("HowKteam", Image.FromFile(Application.StartupPath + "\\Resources\\P1.png")),
-                new Player("Education", Image.FromFile(Application.StartupPath + "\\Resources\\P2.png"))
+                new Player("Nguyen Van A", Image.FromFile(Application.StartupPath + "\\Resources\\P1.png")),
+                new Player("Nguyen Thi B", Image.FromFile(Application.StartupPath + "\\Resources\\P2.png"))
             };
 
-            PlayTimeLine = new Stack<PlayInfo>();
         }
         #endregion
 
@@ -115,9 +116,13 @@ namespace GameCaro1
         {
             ChessBoard.Enabled = true;
             ChessBoard.Controls.Clear();
+
+            PlayTimeLine = new Stack<PlayInfo>();
+
             CurrentPlayer = 0;
 
             ChangePlayer();
+
             Matrix = new List<List<Button>>();
 
             Button oldButton = new Button() { Width = 0, Location = new Point(0, 0) };
@@ -159,24 +164,43 @@ namespace GameCaro1
 
             Mark(btn);
 
-            PlayTimeLine.Push(new PlayInfo(GetChessPoint(btn),CurrentPlayer));
+            PlayTimeLine.Push(new PlayInfo(GetChessPoint(btn), CurrentPlayer));
 
             CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
 
             ChangePlayer();
 
+
             if (playerMarked != null)
-                playerMarked(this, new EventArgs());
+                playerMarked(this, new ButtonClickEvent(GetChessPoint(btn)));
 
             if (isEndGame(btn))
             {
                 EndGame();
             }
-
-            
         }
 
-        
+        public void OtherPlayerMark(Point point)
+        {
+            Button btn = Matrix[point.Y][point.X];
+
+            if (btn.BackgroundImage != null)
+                return;
+
+            Mark(btn);
+
+            PlayTimeLine.Push(new PlayInfo(GetChessPoint(btn), CurrentPlayer));
+
+            CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
+
+            ChangePlayer();
+
+            if (isEndGame(btn))
+            {
+                EndGame();
+            }
+        }
+
         public void EndGame()
         {
             if (endedGame != null)
@@ -351,8 +375,6 @@ namespace GameCaro1
         private void Mark(Button btn)
         {
             btn.BackgroundImage = Player[CurrentPlayer].Mark;
-
-          
         }
 
         private void ChangePlayer()
@@ -363,5 +385,21 @@ namespace GameCaro1
         }
         #endregion
 
+    }
+
+    public class ButtonClickEvent : EventArgs
+    {
+        private Point clickedPoint;
+
+        public Point ClickedPoint
+        {
+            get { return clickedPoint; }
+            set { clickedPoint = value; }
+        }
+
+        public ButtonClickEvent(Point point)
+        {
+            this.ClickedPoint = point;
+        }
     }
 }

@@ -9,17 +9,26 @@ namespace GameCaro1
 {
     public class Player
     {
-        private string name;
-        private Image mark;
-        
-        public string Name { get => name; set => name = value; }
-        public Image Mark { get => mark; set => mark = value; }
+        private string name;    // Ctrl + R + E
 
-        public Player(string name, Image mark) {
-            this.Name = name;
-            this.Mark = mark;
-
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
         }
 
+        private Image mark;
+
+        public Image Mark
+        {
+            get { return mark; }
+            set { mark = value; }
+        }
+
+        public Player(string name, Image mark)
+        {
+            this.Name = name;
+            this.Mark = mark;
+        }
     }
 }

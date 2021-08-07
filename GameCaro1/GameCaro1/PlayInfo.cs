@@ -7,14 +7,25 @@ using System.Threading.Tasks;
 
 namespace GameCaro1
 {
-    class PlayInfo
+    public class PlayInfo
     {
         private Point point;
-        private int currentPlayer;
-        public Point Point { get => point; set => point = value; }
-        public int CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
 
-        public PlayInfo(Point point, int currentPlayer) 
+        public Point Point
+        {
+            get { return point; }
+            set { point = value; }
+        }
+
+        private int currentPlayer;
+
+        public int CurrentPlayer
+        {
+            get { return currentPlayer; }
+            set { currentPlayer = value; }
+        }
+
+        public PlayInfo(Point point, int currentPlayer)
         {
             this.Point = point;
             this.CurrentPlayer = currentPlayer;

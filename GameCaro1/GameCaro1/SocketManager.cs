@@ -62,7 +62,7 @@ namespace GameCaro1
         public bool Send(object data)
         {
             byte[] sendData = SerializeData(data);
-
+            
             return SendData(client, sendData);
         }
 
